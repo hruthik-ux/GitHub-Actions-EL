@@ -1,0 +1,24 @@
+name: EL GitHub Actions Workflow
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Run Basic CI Checks
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Success Message
+        run: echo "GitHub Actions workflow executed successfully!"
+
+      - name: Check Repository Files
+        run: ls -la
